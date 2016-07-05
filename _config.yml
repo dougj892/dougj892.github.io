@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Doug Johnson's Homepage
+title: Doug Johnson's Blog
 email: dougj892@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This site doesn't contain anything right now.  I might use it as a blogging platform later.  Or maybe not.
+  All views expressed on this blog are my own.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: dougj8921
