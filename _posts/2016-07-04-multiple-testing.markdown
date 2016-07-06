@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Multiple Hypothesis Testing"
+title:  "Multiple Testing"
 date:   2016-07-04 10:40:48 -0400
 categories: jekyll update
 ---

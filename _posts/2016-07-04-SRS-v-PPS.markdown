@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Simple Random Sampling vs. PPS Sampling"
+date:   2016-07-04 10:40:48 -0400
+categories: jekyll update
+---
+
+A question came up on one of our evaluations on whether we should use simple random sampling (SRS) or probability proportional to size (PPS) sampling when selecting villages (our primary sampling units) for a matching study.  With PPS sampling, you select your primary sampling units using some measure of size and then, in your second stage, select a fixed number of units per PSU.  If your estimate of size is completely accurate, the probability of selection will be identical for all units.  More details [here](https://en.wikipedia.org/wiki/Sampling_(statistics)#Probability-proportional-to-size_sampling).  Code to perform PPS without replacement [here](https://ideas.repec.org/c/boc/bocode/s454101.html).
+
+A quick way to answer this question is to use the design effect.  The design effect is designed as the ratio of the variance of your estimate under a given sampling scheme to the variance of your estimate under SRS.
+
+If we used SRS for this study and then selected a fixed number of units per village, we would have to weight each household by the number of households in the village to generate population-wide estimates.  If we assume constant variance \\( \sigma_y^2 \\) per village and a few other things, the variance of our estimate of the mean would be
+
+$$Var(\bar{y}_{w})=Var\left(\sum{\frac{w_iy_i}{\sum{w_i}}}\right)=\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}\sigma_y^2$$
+
+Where \\( w_i \\) is the size of village i.
+
+If we sample using PPS, our variance would be closer to the variance for an estimate under SRS which would just be \\( \frac{\sigma_y^2}{N} \\).  Thus, our design effect is...
+
+$$\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}N$$
+
+You can then use the design effect to estimate the "effective size" of the sample -- or the sample size that we should be inserting into our power calcs -- by dividing our actual sample size by the design effect. Note that this is a pretty rough calculation, but it gives you a pretty rough idea of how the sampling scheme will affect power.  
+
+For this project, another consideration in choosing between the two sampling schemes is that we have to do a full household listing in each village.  On average, the villages selected using PPS will be significantly larger than under simple random sampling (where the expected value of the village sizes would be equal to the average village size).  The formula for the expected size of the PSU under PPS (assuming we are just selecting one PSU or selecting with replacement) is...
+
+$$E[w_i]=\frac{\sum{w_i^2}}{\sum{w_i}}$$
+
+To derive this, note that the expected value of a variable is the sum of the probability of selecting each value of the variable times the value.  Under PPS, the probability of selecting each village is \\(\frac{w_i}{\sum{w_i}} \\).  
