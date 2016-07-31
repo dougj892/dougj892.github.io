@@ -90,7 +90,7 @@ fit = pystan.stan(model_code=stan_code, data=stan_data, iter=1000, chains=4)
 ```
 
 # Analyze the results
-Now that we have fit the model, we want to use the results to estimate the probability that the effect of the intervention is greater than $\delta$.  The code above spits out a vector of values for "effect size." These values are approximate draws from the "posterior" for the effect size.  In other words, the vector contains a bunch of values drawn from the distribution of the effect size where the distribution is calculated using the model above. 
+Now that we have fit the model, we want to use the results to estimate the probability that the effect of the intervention is greater than \\(\delta\\).  The code above spits out a vector of values for "effect size." These values are approximate draws from the "posterior" for the effect size.  In other words, the vector contains a bunch of values drawn from the distribution of the effect size where the distribution is calculated using the model above. 
 
 Let's first extract the vector for the posterior values and graph the values using a histogram. 
 
@@ -107,7 +107,7 @@ sns.distplot(effect_sim)
 ![](/assets/dist_effect_size.png)
 
 
-Next, let's calculate the probability that the effect is greater than $\delta$.  For this example, let's assume \\(\delta\\) is equal to .05.  In other words, the other intervention we are comparing our intervention to causes a 5 percentage point increase in the probability of the outcome being a success. 
+Next, let's calculate the probability that the effect is greater than \\(\delta\\).  For this example, let's assume \\(\delta\\) is equal to .05.  In other words, the other intervention we are comparing our intervention to causes a 5 percentage point increase in the probability of the outcome being a success. 
 
 
 ```python
