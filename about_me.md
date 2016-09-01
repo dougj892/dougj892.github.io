@@ -4,6 +4,4 @@ title: About Me
 permalink: /about_me/
 ---
 
-I am currently the India regional director for [IDinsight](http://www.idinsight.org), an organization that helps non-profits and government agencies improve their programs through rigorous testing and learning.  All views expressed on this blog are my own.
-
-In my free time, I hike, mountain bike, rock climb, and write this blog. 
+If you came across this blog and I didn't send you a link you are probably lost.  I use this blog to compose draft blog posts for a separate blog.
