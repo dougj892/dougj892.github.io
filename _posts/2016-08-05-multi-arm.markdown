@@ -70,7 +70,7 @@ for size in size_arms:
     start = end
 ```
 
-![](/assets/mult_arm_dist.png)
+![](/assets/test_dist.png)
 
 This appears to be about what we would expect give our effect sizes.
 
