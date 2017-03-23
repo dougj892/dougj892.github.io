@@ -13,7 +13,7 @@ After trying, and failing, to find a clear description of the difference between
 
 
 ### Review of Diffs-in-diffs and Fixed Effects Specifications
-To jog everyone's memory, if you have one baseline and one end line observation for a set of units, the DiD specification is:
+To jog everyone's memory, if you have one baseline and one end line observation for a set of units, the standard DiD specification is:
 
 $$ Y_{i,t}=\alpha+\beta*EVERTREAT_i + \gamma*POST_t + \tau*TREAT_{i,t} + \varepsilon_{i,t} $$
 
@@ -24,20 +24,20 @@ For the case of one baseline and one end line, the fixed effects specification i
 
 $$ \Delta Y_i=\alpha+ \delta*TREAT_{i} + \varepsilon_{i} $$
 
-Where \\(\Delta Y_i\\) is the change from baseline to end line for unit i.  
+Where \\(\Delta Y_i\\) is the change from baseline to end line for unit i.  This is also known at the "first differences" estimator.  
 
 ### Why you should never use DiD with longitudinal data
 In the simple case with no covariates, both of the above specifications will give you the same point estimates which is equal to:
 
 $$ \hat{\delta} = (\bar{Y}^T_{post}-\bar{Y}^T_{pre})-(\bar{Y}^C_{post}-\bar{Y}^C_{pre}) $$
 
-Where T indicates the subgroup of units that ever received treatment and C indicates those that never received treatment. The fact that the point estimates are the same in this case is probably the source of much of the confusion around these two specifications. My hunch is that people often call the fixed effects specificiation a "difference-in-difference" estimator since the point estimate can be obtained from this twiced difference equation.  (On a sidenote, I seem to recall Martin Ravallion calling it a "difference-in-changes" estimator which seems like a good alternative.)
+Where T indicates the subgroup of units that ever received treatment and C indicates those that never received treatment. The fact that the point estimates are the same in this case is probably the source of much of the confusion around these two specifications. My hunch is that people often call the fixed effects specificiation a "difference-in-difference" estimator since the point estimate can be obtained from this twiced difference equation.  
 
-*The problem with the DiD specification is that, while it will give you the correct point estimates, the variance estimates will be way off.*  If we assume that each observation has the same variance \\(\sigma^2\\), that the correlation between baseline and endline is \\(\rho\\), and that there are n treatment and n control units, the true variance of both estimators is:
+*The problem with the DiD specification is that, while it will give you the correct point estimates, the variance estimates will be way off.*  The reason for this is that the variance estimates treat the baseline and end line as independent observations and thus don't take into account autocorrelation between baseline and end line.  If we assume that each observation has the same variance \\(\sigma^2\\), that the correlation between baseline and endline is \\(\rho\\), and that there are n treatment and n control units, the true variance of both estimators is:
 
 $$ Var(\hat{\delta}) = \frac{4\sigma^2}{n}(1-\rho) $$
 
-To arrive at this result, note that the estimator can also be written as 
+To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as 
 
 $$ \hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C} $$
 
