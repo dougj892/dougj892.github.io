@@ -37,7 +37,7 @@ Where T indicates the subgroup of units that ever received treatment and C indic
 
 $$ Var(\hat{\delta}) = \frac{4\sigma^2}{n}(1-\rho) $$
 
-(Note for self: This is equal to the variance estimate for the "CHANGE" estimator in Frison and Pocock page 1691.) To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as 
+To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as 
 
 $$ \hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C} $$
 
