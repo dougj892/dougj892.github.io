@@ -49,7 +49,7 @@ And the variance of the mean is:
 
 $$Var(\bar{y})=\frac{\sigma^2_{\gamma}}{Q}+\frac{\sigma^2_{\eta}}{QJ}+\frac{\sigma^2_{\phi}}{QJK}=\sigma^2_y\left(  \frac{\rho_{\gamma}}{Q}+\frac{\rho_{\eta}}{QJ}+\frac{(1-\rho_{\gamma}-\rho_{\eta})}{QJK} \right)$$
 
-Where \\( \rho_{\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y} \\) and \\( \rho_{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y} \\).  For our three stage sampling design, the design effect is:
+Where \\(\rho_{\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y}\\) and \\(\rho_{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y}\\).  For our three stage sampling design, the design effect is:
 
 $$DEFF=1+(K-1)\rho_{\eta}+(JK-1)\rho_{\gamma}$$
 
